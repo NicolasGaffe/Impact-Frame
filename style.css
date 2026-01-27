@@ -1,7 +1,6 @@
-/* Importation d'une police élégante */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
 
-/* Réinitialisation de base */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +14,6 @@ body {
     background-color: #f9f9f9;
 }
 
-/* --- NAVIGATION --- */
 header {
     background-color: #fff;
     border-bottom: 1px solid #eee;
@@ -64,7 +62,6 @@ ul li a:hover {
     border-radius: 4px;
 }
 
-/* --- SECTION HERO --- */
 .hero {
     height: 60vh;
     display: flex;
@@ -105,7 +102,6 @@ ul li a:hover {
     background-color: #333;
 }
 
-/* --- SECTIONS GÉNÉRALES --- */
 section {
     padding: 4rem 5%;
 }
@@ -124,15 +120,4 @@ footer {
     border-top: 1px solid #eee;
     font-size: 0.8rem;
     color: #888;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    ul {
-        display: none; /* Cache le menu sur mobile pour l'instant */
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
 }
