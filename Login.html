@@ -13,12 +13,12 @@
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
         <button type="submit">S'inscrire</button>
-        <div id="message" style="color: green; font-weight: bold;"></div>
+            <div id="message" style="color: green; font-weight: bold;"></div>
         <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === '1') {
-            document.getElementById('message').innerText = "Succès";
-        }
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                document.getElementById('message').innerText = "Succès";
+            }
         </script>
     </form>
 
@@ -34,6 +34,7 @@
 </body>
 
 </html>
+
 
 
 
