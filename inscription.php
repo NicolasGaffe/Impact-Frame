@@ -8,5 +8,6 @@ $mdp    = $_POST['mot_de_passe'];
 $ins = $pdo->prepare("INSERT INTO Utilisateurs (pseudo, email, mot_de_passe) VALUES (?, ?, ?)");
 $ins->execute([$pseudo, $email, $mdp]);
 
-header('Location: login.html');
+header('Location: Login.html');
+
 ?>
