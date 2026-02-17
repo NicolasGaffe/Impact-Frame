@@ -1,54 +1,76 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
 }
 
-a {
+.navbar {
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-item > a {
+    color: white;
     text-decoration: none;
-    color: #2c3e50;
     font-weight: bold;
-    display: inline-block;
-    margin-top: 15px;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background 0.3s, color 0.3s;
+    padding: 20px 0;
+    display: block;
 }
 
-a:hover {
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown li a:hover {
     background-color: #e67e22;
     color: white;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 20px;
-    margin-top: 5px;
-    border-left: 2px solid #ccc;
+.nav-auth {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
 }
 
-li {
-    margin-bottom: 5px;
-}
-
-ul li a {
-    font-weight: normal;
+.nav-auth a {
+    color: white;
+    text-decoration: none;
     font-size: 0.9em;
-    color: #555;
-    margin-top: 0;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-a[href="MonCompte.php"], 
-a[href="Login.html"], 
-a[href="Panier.html"] {
-    border: 1px solid #2c3e50;
-    margin-right: 10px;
-}
-
-a[href="logout.php"] {
-    color: #e74c3c;
+.nav-auth a.cart {
+    background-color: #e67e22;
+    border: none;
 }
