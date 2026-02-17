@@ -13,9 +13,10 @@ $user = $req->fetch();
 if ($user) {
     $_SESSION['pseudo'] = $user['pseudo'];
     $_SESSION['email']  = $user['email'];
-    header('Location: index.html');
+    header('Location: index.php');
 } else {
     header('Location: Login.html');
     }
 ?>
+
 
