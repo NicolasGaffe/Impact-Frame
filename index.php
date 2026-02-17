@@ -61,8 +61,42 @@ session_start();
         </div>
     </div>
 </nav>
+<?php
+include('config.php'); 
+
+function afficherRoulette($categorie, $titre, $bdd) {
+    echo '<section class="article-row">';
+    echo '<h2>' . $titre . '</h2>';
+    echo '<div class="scrolling-wrapper">';
+
+    $query = $bdd->prepare("SELECT * FROM produits WHERE categorie = ?");
+    $query->execute([$categorie]);
+    $produits = $query->fetchAll();
+
+    foreach ($produits as $produit) {
+        echo '<div class="card">';
+        echo '    <img src="img/' . htmlspecialchars($produit['image']) . '" alt="' . htmlspecialchars($produit['nom']) . '">';
+        echo '    <h3>' . htmlspecialchars($produit['nom']) . '</h3>';
+        echo '    <p>' . number_format($produit['prix'], 2) . '€</p>';
+        echo '    <button class="btn-buy">Ajouter</button>';
+        echo '</div>';
+    }
+
+    echo '</div>';
+    echo '</section>';
+}
+?>
+
+<main class="content">
+    <?php 
+    afficherRoulette('tableau', 'Nos Tableaux', $bdd);
+    afficherRoulette('figurine', 'Nos Figurines', $bdd);
+    afficherRoulette('katana', 'Nos Katanas', $bdd);
+    ?>
+</main>
 </body>
 </html>
+
 
 
 
