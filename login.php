@@ -16,4 +16,5 @@ if ($user) {
     header('Location: index.html');
 } else {
     header('Location: login.html');
-}
+    }
+?>
