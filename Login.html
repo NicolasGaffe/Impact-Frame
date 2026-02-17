@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Connexion - Impact Frame</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="login.php" method="POST">
-        <input type="text" name="pseudo" placeholder="Pseudo" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
-        <button type="submit">Connexion</button>
-    </form>
-    
+    <div class="form-container">
+        <h2>Connexion</h2>
+        <form action="login.php" method="POST" class="auth-form">
+            <div class="input-group">
+                <input type="text" name="pseudo" placeholder="Pseudo" required>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
+            </div>
+            <button type="submit" class="btn-submit">Se connecter</button>
+        </form>
+        <p>Pas encore de compte ? <a href="Register.html" style="color: #e67e22 !important;">S'inscrire</a></p>
+    </div>
 </body>
-
 </html>
+
 
 
 
