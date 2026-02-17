@@ -13,40 +13,48 @@ session_start();
 <body> 
 
 <nav class="navbar">
-    <div class="nav-links">
-        <div class="dropdown">
-            <a href="Tableau.html" class="main-link">Tableaux</a>
-            <div class="dropdown-content">
-                <a href="Tableau_Manga.html">Par Manga</a>
-                <a href="Tableau_Nouveau.html">Nouveautés</a>
+    <div class="nav-container">
+        <div class="menu-left">
+            <div class="nav-item">
+                <a href="Tableau.html">Tableaux</a>
+                <ul class="dropdown">
+                    <li><a href="Tableau_Manga.html">Par Manga</a></li>
+                    <li><a href="Tableau_Nouveau.html">Nouveautés</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-item">
+                <a href="Figurine.html">Figurines</a>
+                <ul class="dropdown">
+                    <li><a href="Figurine_Manga.html">Par Manga</a></li>
+                    <li><a href="Figurine_Nouveau.html">Nouveautés</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-item">
+                <a href="Katana.html">Katanas</a>
+            </div>
+            
+            <div class="nav-item">
+                <a href="Entreprise.html">L'entreprise</a>
             </div>
         </div>
 
-        <div class="dropdown">
-            <a href="Figurine.html" class="main-link">Figurines</a>
-            <div class="dropdown-content">
-                <a href="Figurine_Manga.html">Par Manga</a>
-                <a href="Figurine_Nouveau.html">Nouveautés</a>
-            </div>
+        <div class="nav-auth">
+            <?php if (isset($_SESSION['pseudo'])): ?>
+                <a href="MonCompte.php">Compte (<?php echo htmlspecialchars($_SESSION['pseudo']); ?>)</a>
+                <a href="logout.php" class="logout">Quitter</a>
+            <?php else: ?>
+                <a href="Login.html">Connexion</a>
+            <?php endif; ?>
+            <a href="Panier.html" class="cart">🛒 Panier</a>
         </div>
-
-        <a href="Katana.html" class="main-link">Katanas</a>
-        <a href="Entreprise.html" class="main-link">L'entreprise</a>
-    </div>
-
-    <div class="nav-auth">
-        <?php if (isset($_SESSION['pseudo'])): ?>
-            <a href="MonCompte.php" class="main-link">Compte (<?php echo htmlspecialchars($_SESSION['pseudo']); ?>)</a>
-            <a href="logout.php" class="logout-link">Déconnexion</a>
-        <?php else: ?>
-            <a href="Login.html" class="main-link">Connexion</a>
-        <?php endif; ?>
-        <a href="Panier.html" class="cart-btn">🛒 Panier</a>
     </div>
 </nav>
 
 </body>
 </html>
+
 
 
 
