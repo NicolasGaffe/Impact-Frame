@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impact Frame</title>
 </head>
-<body>
+<nav class="navbar">
     <a href="Tableau.html">Nos Tableaux</a>
     <ul>
         <li><a href="Tableau_Manga.html">Par Manga</a></li>
@@ -41,8 +41,9 @@ session_start();
         <a href="Register.html">S'inscrire</a>
     <?php endif; ?>
     <a href="Panier.html">Panier</a>
-</body>
+</nav>
 </html>
+
 
 
 
