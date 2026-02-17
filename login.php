@@ -15,6 +15,7 @@ if ($user) {
     $_SESSION['email']  = $user['email'];
     header('Location: index.html');
 } else {
-    header('Location: login.html');
+    header('Location: Login.html');
     }
 ?>
+
