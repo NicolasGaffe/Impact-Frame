@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,9 +32,15 @@
         <li><a href="Politique.html">Politique de Confidentialité</a></li>
     </ul>
     <a href="Cadeau.html">Carte Cadeau</a>
-    <a href="Login.html">Se Connecter</a>
-    <a href="Register.html">S'inscrire</a>
+    <?php if (isset($_SESSION['pseudo'])): ?>
+        <a href="MonCompte.php">Mon Compte (<?php echo htmlspecialchars($_SESSION['pseudo']); ?>)</a>
+        <a href="logout.php">Déconnexion</a>
+    <?php else: ?>
+        <a href="Login.html">Se Connecter</a>
+        <a href="Register.html">S'inscrire</a>
+    <?php endif; ?>
     <a href="Panier.html">Panier</a>
 </body>
 </html>
+
 
