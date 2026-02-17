@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+a:hover {
+    background-color: #e67e22;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 5px;
+    border-left: 2px solid #ccc;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+ul li a {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 0;
+}
+
+a[href="MonCompte.php"], 
+a[href="Login.html"], 
+a[href="Panier.html"] {
+    border: 1px solid #2c3e50;
+    margin-right: 10px;
+}
+
+a[href="logout.php"] {
+    color: #e74c3c;
+}
