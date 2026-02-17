@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inscription - Impact Frame</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="form-container">
         <h2>Créer un compte</h2>
-    <form action="inscription.php" method="POST">
-        <input type="text" name="pseudo" placeholder="Pseudo" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
-        <button type="submit">S'inscrire</button>
-        
-        <div id="message" style="color: green; font-weight: bold;"></div>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === '1') {
-            document.getElementById('message').innerText = "Succès";
-        }
-    </script>
-    </form>
+        <form action="inscription.php" method="POST" class="auth-form">
+            <div class="input-group">
+                <input type="text" name="pseudo" placeholder="Pseudo" required>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
+            </div>
+            <button type="submit" class="btn-submit">S'inscrire</button>
+            
+            <div id="message" style="color: #27ae60; font-weight: bold; margin-top: 10px;"></div>
+        </form>
+        <p>Déjà inscrit ? <a href="Login.html" style="color: #e67e22 !important;">Se connecter</a></p>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                document.getElementById('message').innerText = "Compte créé avec succès !";
+            }
+        </script>
+    </div>
 </body>
 </html>
