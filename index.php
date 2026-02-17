@@ -64,12 +64,12 @@ session_start();
 <?php
 include('config.php'); 
 
-function afficherRoulette($categorie, $titre, $bdd) {
+function afficherRoulette($categorie, $titre, $pdo) {
     echo '<section class="article-row">';
     echo '<h2>' . $titre . '</h2>';
     echo '<div class="scrolling-wrapper">';
 
-    $query = $bdd->prepare("SELECT * FROM produits WHERE categorie = ?");
+    $query = $pdo->prepare("SELECT * FROM produits WHERE categorie = ?");
     $query->execute([$categorie]);
     $produits = $query->fetchAll();
 
@@ -96,6 +96,7 @@ function afficherRoulette($categorie, $titre, $bdd) {
 </main>
 </body>
 </html>
+
 
 
 
