@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impact Frame</title>
 </head>
-<nav class="navbar">
+<body> <nav class="navbar">
     <div class="nav-links">
         <div class="dropdown">
             <a href="Tableau.html" class="main-link">Tableaux</a>
@@ -33,14 +33,16 @@ session_start();
 
     <div class="nav-auth">
         <?php if (isset($_SESSION['pseudo'])): ?>
-            <a href="MonCompte.php">Compte (<?php echo htmlspecialchars($_SESSION['pseudo']); ?>)</a>
-            <a href="logout.php" style="color: #ff4d4d;">Déconnexion</a>
+            <a href="MonCompte.php" class="main-link">Compte (<?php echo htmlspecialchars($_SESSION['pseudo']); ?>)</a>
+            <a href="logout.php" class="logout-link">Déconnexion</a>
         <?php else: ?>
-            <a href="Login.html">Connexion</a>
+            <a href="Login.html" class="main-link">Connexion</a>
         <?php endif; ?>
         <a href="Panier.html" class="cart-btn">🛒 Panier</a>
     </div>
 </nav>
+
+</body>
 </html>
 
 
