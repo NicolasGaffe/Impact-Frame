@@ -89,13 +89,14 @@ function afficherRoulette($categorie, $titre, $bdd) {
 
 <main class="content">
     <?php 
-    afficherRoulette('tableau', 'Nos Tableaux', $bdd);
-    afficherRoulette('figurine', 'Nos Figurines', $bdd);
-    afficherRoulette('katana', 'Nos Katanas', $bdd);
+    afficherRoulette('tableau', 'Nos Tableaux', $pdo);
+    afficherRoulette('figurine', 'Nos Figurines', $pdo);
+    afficherRoulette('katana', 'Nos Katanas', $pdo);
     ?>
 </main>
 </body>
 </html>
+
 
 
 
