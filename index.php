@@ -41,6 +41,12 @@ session_start();
             
             <div class="nav-item">
                 <a href="Entreprise.html">L'entreprise</a>
+                <ul class="dropdown">
+                    <li><a href="Magasin.html">Notre Magasin</a></li>
+                    <li><a href="Service_Client.html">Service Client</a></li>
+                    <li><a href="FAQ">FAQ</a></li>
+                    <li><a href="Politique de Confidentialité.html">Politique de Confidentialité</a></li>
+                </ul>
             </div>
         </div>
 
@@ -57,6 +63,7 @@ session_start();
 </nav>
 </body>
 </html>
+
 
 
 
