@@ -9,6 +9,8 @@ body {
     height: 60px;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 2000;
     width: 100%;
 }
 
@@ -177,4 +179,5 @@ body {
     font-weight: bold;
     margin-top: 10px;
 }
+
 
