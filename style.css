@@ -45,7 +45,7 @@ body {
 .dropdown {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0;
     background: white;
     min-width: 160px;
@@ -179,5 +179,6 @@ body {
     font-weight: bold;
     margin-top: 10px;
 }
+
 
 
