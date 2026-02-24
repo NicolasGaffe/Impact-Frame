@@ -15,7 +15,7 @@ session_start();
     <div class="nav-container">
         <div class="menu-left">
             <div class="nav-item">
-                <a href="Tableau.html">Tableau</a>
+                <a href="Tableau.php">Tableau</a>
                 <ul class="dropdown">
                     <li><a href="Tableau_Manga.html">Par Manga</a></li>
                     <li><a href="Tableau_Nouveau.html">Nouveautés</a></li>
@@ -96,6 +96,7 @@ function afficherRoulette($categorie, $titre, $pdo) {
 </main>
 </body>
 </html>
+
 
 
 
