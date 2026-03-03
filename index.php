@@ -37,7 +37,6 @@ session_start();
                     <li><a href="katana_Nouveau.html">Nouveautés</a></li>
                 </ul>
             </div>
-            </div>
             
             <div class="nav-item">
                 <a href="Entreprise.html">L'entreprise</a>
@@ -96,6 +95,7 @@ function afficherRoulette($categorie, $titre, $pdo) {
 </main>
 </body>
 </html>
+
 
 
 
