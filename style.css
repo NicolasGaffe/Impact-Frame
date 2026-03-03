@@ -44,6 +44,16 @@ body {
     height: 60px;
 }
 
+.dropdown::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    display: block;
+}
+
 .dropdown {
     display: none;
     position: absolute;
@@ -181,6 +191,7 @@ body {
     font-weight: bold;
     margin-top: 10px;
 }
+
 
 
 
