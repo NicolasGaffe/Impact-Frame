@@ -40,7 +40,8 @@ body {
     text-decoration: none;
     font-weight: bold;
     padding: 20px 0;
-    display: block;
+    display: flex;
+    align-items: center;
     height: 60px;
 }
 
