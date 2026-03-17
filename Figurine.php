@@ -44,7 +44,7 @@ session_start();
         <div class="nav-auth">
             <?php if (isset($_SESSION['pseudo'])): ?>
                 <a href="MonCompte.php">Compte (<?php echo htmlspecialchars($_SESSION['pseudo']); ?>)</a>
-                <a href="logout.php" class="logout">Quitter</a>
+                <a href="logout.php" class="logout">Se déconnecter</a>
             <?php else: ?>
                 <a href="Login.html">Connexion</a>
             <?php endif; ?>
