@@ -31,7 +31,7 @@ session_start();
                 </ul>
             </div>
             <div class="nav-item">
-                <a href="Entreprise.html">L'entreprise</a>
+                <a href="Entreprise.php">L'entreprise</a>
                 <ul class="dropdown">
                     <li><a href="Magasin.html">Notre Magasin</a></li>
                     <li><a href="Service_Client.html">Service Client</a></li>
