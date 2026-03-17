@@ -12,6 +12,9 @@ session_start();
 <body> 
 <nav class="navbar">
     <div class="nav-container">
+        <div class="nav-item">
+                <a href="index.php">Accueil</a>
+        </div>
         <div class="menu-left">
             <div class="nav-item">
                 <a href="Tableau.html">Tableau</a>
