@@ -17,21 +17,14 @@ session_start();
                 <a href="index.php">Accueil</a>
             </div>
             <div class="nav-item">
-                <a href="Tableau.html">Tableau</a>
+                <a href="Tableau.php">Tableau</a>
                 <ul class="dropdown">
                     <li><a href="Tableau_Manga.html">Par Manga</a></li>
                     <li><a href="Tableau_Nouveau.html">Nouveautés</a></li>
                 </ul>
             </div>
             <div class="nav-item">
-                <a href="Figurine.html">Figurine</a>
-                <ul class="dropdown">
-                    <li><a href="Figurine_Manga.html">Par Manga</a></li>
-                    <li><a href="Figurine_Nouveau.html">Nouveautés</a></li>
-                </ul>
-            </div>
-            <div class="nav-item">
-                <a href="Katana.html">Katana</a>
+                <a href="Katana.php">Katana</a>
                 <ul class="dropdown">
                     <li><a href="Katana_Manga.html">Par Manga</a></li>
                     <li><a href="katana_Nouveau.html">Nouveautés</a></li>
