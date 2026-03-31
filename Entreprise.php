@@ -46,6 +46,7 @@ session_start();
                 <a href="logout.php" class="logout">Se déconnecter</a>
             <?php else: ?>
                 <a href="Login.html">Connexion</a>
+                <a href="Register.html">S'inscrire</a>
             <?php endif; ?>
             <a href="Panier.html" class="cart">🛒 Panier</a>
         </div>
