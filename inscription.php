@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=Impact-Frame;charset=utf8", "admin", "1234");
+$pdo = new PDO("mysql:host=localhost;dbname=impact_frame;charset=utf8", "admin", "1234");
 
 $pseudo = $_POST['pseudo'];
 $email  = $_POST['email'];
