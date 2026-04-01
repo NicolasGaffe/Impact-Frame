@@ -18,26 +18,15 @@ session_start();
             </div>
             <div class="nav-item">
                 <a href="Tableau.php">Tableau</a>
-                <ul class="dropdown">
-                    <li><a href="Tableau_Manga.html">Par Manga</a></li>
-                    <li><a href="Tableau_Nouveau.html">Nouveautés</a></li>
-                </ul>
             </div>
             <div class="nav-item">
                 <a href="Figurine.php">Figurine</a>
-                <ul class="dropdown">
-                    <li><a href="Figurine_Manga.html">Par Manga</a></li>
-                    <li><a href="Figurine_Nouveau.html">Nouveautés</a></li>
-                </ul>
+            </div>
+            <div class="nav-item">
+                <a href="Katana.php">Katana</a>
             </div>
             <div class="nav-item">
                 <a href="Entreprise.php">L'entreprise</a>
-                <ul class="dropdown">
-                    <li><a href="Magasin.html">Notre Magasin</a></li>
-                    <li><a href="Service_Client.html">Service Client</a></li>
-                    <li><a href="FAQ">FAQ</a></li>
-                    <li><a href="Politique de Confidentialité.html">Politique de Confidentialité</a></li>
-                </ul>
             </div>
         </div>
 
