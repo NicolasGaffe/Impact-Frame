@@ -18,26 +18,15 @@ session_start();
             </div>
             <div class="nav-item">
                 <a href="Tableau.php">Tableau</a>
-                <ul class="dropdown">
-                    <li><a href="Tableau_Manga.html">Par Manga</a></li>
-                    <li><a href="Tableau_Nouveau.html">Nouveautés</a></li>
-                </ul>
             </div>
             <div class="nav-item">
                 <a href="Figurine.php">Figurine</a>
-                <ul class="dropdown">
-                    <li><a href="Figurine_Manga.html">Par Manga</a></li>
-                    <li><a href="Figurine_Nouveau.html">Nouveautés</a></li>
-                </ul>
+            </div>
+            <div class="nav-item">
+                <a href="Katana.php">Katana</a>
             </div>
             <div class="nav-item">
                 <a href="Entreprise.php">L'entreprise</a>
-                <ul class="dropdown">
-                    <li><a href="Magasin.html">Notre Magasin</a></li>
-                    <li><a href="Service_Client.html">Service Client</a></li>
-                    <li><a href="FAQ">FAQ</a></li>
-                    <li><a href="Politique de Confidentialité.html">Politique de Confidentialité</a></li>
-                </ul>
             </div>
         </div>
 
@@ -47,8 +36,14 @@ session_start();
                 <a href="logout.php" class="logout">Se déconnecter</a>
             <?php else: ?>
                 <a href="Login.html">Connexion</a>
+                <a href="Register.html">S'inscrire</a>
             <?php endif; ?>
-            <a href="Panier.html" class="cart">🛒 Panier</a>
+            	<a href="Panier.html" class="cart">🛒 Panier</a>
+		<button id="music-btn" class="nav-item-btn" onclick="toggleMusic()">🔈 Musique</button>		
+		<audio id="bg-music" loop>
+        	<source src="audio/one-piece-theme.mp3" type="audio/mpeg">
+        	Votre navigateur ne supporte pas l'élément audio.
+    		</audio>
         </div>
     </div>
 
@@ -83,6 +78,22 @@ function afficherRoulette($categorie, $titre, $pdo) {
     <?php 
     afficherRoulette('katana', 'Nos Katanas', $pdo);
     ?>
+<script>
+function toggleMusic() {
+    var music = document.getElementById("bg-music");
+    var btn = document.getElementById("music-btn");
+
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "🔊 Musique"; // Icône quand le son joue
+        btn.style.backgroundColor = "#e67e22"; // On change la couleur pour montrer que c'est actif
+    } else {
+        music.pause();
+        btn.innerHTML = "🔈 Musique"; // Icône quand c'est coupé
+        btn.style.backgroundColor = "transparent";
+    }
+}
+</script>
 </main>
 </body>
 </html>

@@ -1,7 +1,10 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('fond-meronepiece.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .navbar {
@@ -43,6 +46,21 @@ body {
     display: flex;
     align-items: center;
     height: 60px;
+}
+.nav-item-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.nav-item-btn:hover {
+    background-color: rgba(255,255,255,0.1);
 }
 
 .dropdown {
@@ -95,7 +113,7 @@ body {
     border: none;
 }
 .form-container {
-    background: white;
+    backdrop-filter: blur(8px);
     max-width: 400px;
     margin: 100px auto;
     padding: 30px;
@@ -105,7 +123,7 @@ body {
 }
 
 .form-container h2 {
-    color: #2c3e50;
+    backdrop-filter: blur(8px);
     margin-bottom: 20px;
 }
 
@@ -140,13 +158,14 @@ body {
 .form-container p {
     margin-top: 15px;
     font-size: 0.9em;
-    color: #666;
+    color: #FFFFFF;
 }
 
 .content {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    color: #FFFFFF;
 }
 
 .scrolling-wrapper {
@@ -158,7 +177,7 @@ body {
 
 .card {
     flex: 0 0 250px;
-    background: white;
+    backdrop-filter: blur(8px);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -183,7 +202,55 @@ body {
     margin-top: 10px;
 }
 
+/* Style du message d'accueil */
+.hero {
+    height: 60vh; /* Prend 60% de la hauteur de l'écran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
 
+.hero-text {
+    background: rgba(44, 62, 80, 0.4);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: #e67e22;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-hero:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+.content {
+    padding-top: 40px;
+}
 
 
 

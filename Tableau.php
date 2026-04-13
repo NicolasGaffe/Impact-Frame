@@ -9,7 +9,7 @@ session_start();
     <title>Impact Frame</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body> 
+<body>
 <nav class="navbar">
     <div class="nav-container">
         <div class="menu-left">
@@ -17,27 +17,16 @@ session_start();
                 <a href="index.php">Accueil</a>
         </div>
             <div class="nav-item">
+                <a href="Tableau.php">Tableau</a>
+            </div>
+            <div class="nav-item">
                 <a href="Figurine.php">Figurine</a>
-                <ul class="dropdown">
-                    <li><a href="Figurine_Manga.html">Par Manga</a></li>
-                    <li><a href="Figurine_Nouveau.html">Nouveautés</a></li>
-                </ul>
             </div>
             <div class="nav-item">
                 <a href="Katana.php">Katana</a>
-                <ul class="dropdown">
-                    <li><a href="Katana_Manga.html">Par Manga</a></li>
-                    <li><a href="katana_Nouveau.html">Nouveautés</a></li>
-                </ul>
             </div>
             <div class="nav-item">
                 <a href="Entreprise.php">L'entreprise</a>
-                <ul class="dropdown">
-                    <li><a href="Magasin.html">Notre Magasin</a></li>
-                    <li><a href="Service_Client.html">Service Client</a></li>
-                    <li><a href="FAQ">FAQ</a></li>
-                    <li><a href="Politique de Confidentialité.html">Politique de Confidentialité</a></li>
-                </ul>
             </div>
         </div>
 
@@ -47,8 +36,14 @@ session_start();
                 <a href="logout.php" class="logout">Se déconnecter</a>
             <?php else: ?>
                 <a href="Login.html">Connexion</a>
+                <a href="Register.html">S'inscrire</a>
             <?php endif; ?>
             <a href="Panier.html" class="cart">🛒 Panier</a>
+		<button id="music-btn" class="nav-item-btn" onclick="toggleMusic()">🔈 Musique</button>
+		<audio id="bg-music" loop>
+        	<source src="audio/one-piece-ost-overtaken.mp3" type="audio/mpeg">
+        	Votre navigateur ne supporte pas l'élément audio.
+    		</audio>
         </div>
     </div>
 
@@ -83,6 +78,23 @@ function afficherRoulette($categorie, $titre, $pdo) {
     <?php 
     afficherRoulette('tableau', 'Nos Tableaux', $pdo);
     ?>
+
+<script>
+function toggleMusic() {
+    var music = document.getElementById("bg-music");
+    var btn = document.getElementById("music-btn");
+
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "🔊 Musique";
+        btn.style.backgroundColor = "#e67e22";
+} else {
+        music.pause();
+        btn.innerHTML = "🔈 Musique";
+        btn.style.backgroundColor = "transparent";
+    }
+}
+</script>
 </main>
 </body>
 </html>
