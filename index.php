@@ -54,8 +54,8 @@ session_start();
 <section class="hero">
     <div class="hero-text">
         <h1>L'Aventure commence ici</h1>
-        <p>Découvrez notre sélection exclusive de Katanas, Figurines et Tableaux d'exception.</p>
-        <a href="tableau.php" class="btn-hero">Explorer la collection</a>
+        <p>Découvrez notre sélection exclusive de Tableaux, Figurines et Katanas d'exception.</p>
+        <a href="Tableau.php" class="btn-hero">Explorer la collection</a>
     </div>
 </section>
 <main class="content">

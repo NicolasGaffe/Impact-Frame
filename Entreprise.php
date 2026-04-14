@@ -27,7 +27,7 @@ session_start();
                 <a href="Katana.php">Katana</a>
             </div>
             <div class="nav-item">
-                <a href="Entreprise.php">L'Entreprise</a>
+                <a href="Entreprise.php">L'entreprise</a>
             </div>
         </div>
 
@@ -40,6 +40,11 @@ session_start();
                 <a href="Register.html">S'inscrire</a>
             <?php endif; ?>
             <a href="Panier.html" class="cart">🛒 Panier</a>
+		<button id="music-btn" class="nav-item-btn" onclick="toggleMusic()">🔈 Musique</button>
+		<audio id="bg-music" loop>
+        	<source src="audio/one-piece-ost-overtaken.mp3" type="audio/mpeg">
+        	Votre navigateur ne supporte pas l'élément audio.
+    		</audio>
         </div>
     </div>
 </nav>
@@ -50,7 +55,6 @@ session_start();
             Bienvenue chez <strong>Impact Frame</strong>. Nous sommes spécialisés dans la vente d'objets de collection pour les passionnés de culture japonaise. 
             Que vous cherchiez des tableaux dynamiques, des figurines détaillées ou des katanas d'exception, notre mission est de vous fournir la meilleure qualité possible.
         </p>
-        
         <div style="display: flex; gap: 20px; margin-top: 30px; text-align: left;">
             <div style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 8px;">
                 <h3 style="color: #FFFFFF;">Notre Vision</h3>
@@ -63,6 +67,21 @@ session_start();
         </div>
     </div>
 </main>
+<script>
+function toggleMusic() {
+    var music = document.getElementById("bg-music");
+    var btn = document.getElementById("music-btn");
 
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "🔊 Musique";
+        btn.style.backgroundColor = "#e67e22";
+} else {
+        music.pause();
+        btn.innerHTML = "🔈 Musique";
+        btn.style.backgroundColor = "transparent";
+    }
+}
+</script>
 </body>
 </html>
