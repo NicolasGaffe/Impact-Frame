@@ -1,122 +1,41 @@
-<?php
-session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impact Frame</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="Impact Frame : un projet de boutique de collection manga, restauré en une archive interactive. Tableaux, figurines et katanas dans l'univers One Piece.">
+  <title>Impact Frame — La passion prend forme</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="store.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="menu-left">
-            <div class="nav-item">
-                <a href="index.php">Accueil</a>
-            </div>
-            <div class="nav-item">
-                <a href="Tableau.php">Tableau</a>
-            </div>
-
-            <div class="nav-item">
-                <a href="Figurine.php">Figurine</a>
-            </div>
-
-            <div class="nav-item">
-                <a href="Katana.php">Katana</a>
-            </div>
-            <div class="nav-item">
-                <a href="Entreprise.php">L'entreprise</a>
-            </div>
-        </div>
-
-        <div class="nav-auth">
-            <?php if (isset($_SESSION['pseudo'])): ?>
-                <a href="MonCompte.php">Compte (<?php echo htmlspecialchars($_SESSION['pseudo']); ?>)</a>
-                <a href="logout.php" class="logout">Se déconnecter</a>
-            <?php else: ?>
-                <a href="Login.html">Connexion</a>
-                <a href="Register.html">S'inscrire</a>
-            <?php endif; ?>
-            	<a href="Panier.html" class="cart">🛒 Panier</a>
-		<button id="music-btn" class="nav-item-btn" onclick="toggleMusic()">🔈 Musique</button>
-
-    		<audio id="bg-music" loop>
-        	<source src="audio/one-piece-ost-overtaken.mp3" type="audio/mpeg">
-        	Votre navigateur ne supporte pas l'élément audio.
-    		</audio>
-        </div>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div class="edition-bar"><span>UNE PASSION. TROIS FAÇONS DE LA VIVRE.</span><a href="#archive">Édition archive · boutique de démonstration <span aria-hidden="true">↗</span></a></div>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="Impact Frame, accueil"><span class="brand-mark" aria-hidden="true">IF</span><span>IMPACT<span class="brand-second">FRAME<span class="brand-dot" aria-hidden="true">✳</span></span></span></a>
+    <nav id="navigation" aria-label="Navigation principale">
+      <a href="#collection" data-nav="collection">La collection</a><a href="#collection?categorie=tableaux">Tableaux</a><a href="#collection?categorie=figurines">Figurines</a><a href="#collection?categorie=katanas">Katanas</a><a href="#histoire" data-nav="histoire">Notre histoire</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="search-open" aria-label="Rechercher dans la collection"></button>
+      <a class="icon-button account-link" href="#carnet" aria-label="Mon carnet de collection"></a>
+      <a class="cart-link" href="#panier" aria-label="Panier, 0 article"><span id="cart-icon" aria-hidden="true"></span><span class="cart-word">Panier</span><span id="cart-count">0</span></a>
+      <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation"></button>
     </div>
-</nav>
-<section class="hero">
-    <div class="hero-text">
-        <h1>L'Aventure commence ici</h1>
-        <p>Découvrez notre sélection exclusive de Tableaux, Figurines et Katanas d'exception.</p>
-        <a href="Tableau.php" class="btn-hero">Explorer la collection</a>
-    </div>
-</section>
-<main class="content">
-<?php
-include('config.php'); 
-
-function afficherRoulette($categorie, $titre, $pdo) {
-    echo '<section class="article-row">';
-    echo '<h2>' . $titre . '</h2>';
-    echo '<div class="scrolling-wrapper">';
-
-    $query = $pdo->prepare("SELECT * FROM produits WHERE categorie = ?");
-    $query->execute([$categorie]);
-    $produits = $query->fetchAll();
-
-    foreach ($produits as $produit) {
-        echo '<div class="card">';
-        echo '    <img src="img/' . htmlspecialchars($produit['image']) . '" alt="' . htmlspecialchars($produit['nom']) . '">';
-        echo '    <h3>' . htmlspecialchars($produit['nom']) . '</h3>';
-        echo '    <p>' . number_format($produit['prix'], 2) . '€</p>';
-        echo '    <button class="btn-buy">Ajouter</button>';
-        echo '</div>';
-    }
-
-    echo '</div>';
-    echo '</section>';
-}
-?>
-
-<main class="content">
-    <?php 
-    ?>
-
-<script>
-function toggleMusic() {
-    var music = document.getElementById("bg-music");
-    var btn = document.getElementById("music-btn");
-
-    if (music.paused) {
-        music.play();
-        btn.innerHTML = "🔊 Musique";
-    } else {
-        music.pause();
-        btn.innerHTML = "🔈 Musique";
-    }
-}
-</script>
-</main>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="site-footer">
+    <div class="footer-top"><a href="#accueil" class="footer-brand">IMPACT<br>FRAME<span aria-hidden="true">✳</span></a><p>Les univers qui nous inspirent.<br>Les objets qui nous ressemblent.</p><div><span class="eyebrow">EXPLORER</span><a href="#collection">La collection</a><a href="#histoire">Notre histoire</a><a href="#carnet">Mon carnet</a></div><div><span class="eyebrow">À SAVOIR</span><a href="#aide">Questions fréquentes</a><a href="#archive">À propos de l’archive</a><button id="music-toggle" aria-pressed="false">Activer l’ambiance sonore ↗</button></div></div>
+    <div class="footer-bottom"><span>© Impact Frame · Édition archive 2026</span><span>Projet de démonstration. Aucune vente réelle.</span><a href="#archive">Crédits & informations</a></div>
+  </footer>
+  <dialog id="search-dialog" aria-labelledby="search-title"><div class="dialog-heading"><h2 id="search-title">Une pièce en tête ?</h2><button class="icon-button close-dialog" aria-label="Fermer la recherche"></button></div><form id="search-form"><label for="search-input">Rechercher un objet, un personnage, un univers</label><div class="search-field"><input id="search-input" name="recherche" type="search" placeholder="Luffy, tableau, katana…" autocomplete="off"><button class="button" type="submit">Rechercher <span aria-hidden="true">↗</span></button></div></form><p class="muted">À découvrir : <a href="#collection?categorie=tableaux" data-close-search>les tableaux</a>, <a href="#collection?categorie=figurines" data-close-search>les figurines</a>, <a href="#collection?categorie=katanas" data-close-search>les katanas</a>.</p></dialog>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-heading"><h2 id="confirm-title">Terminer la démonstration</h2><button class="icon-button close-dialog" aria-label="Fermer"></button></div><p>Votre sélection sera enregistrée dans votre carnet, sur ce navigateur. Aucune commande ni aucun paiement ne sera transmis.</p><div id="confirm-summary"></div><div class="dialog-actions"><button class="button secondary" data-cancel-order>Continuer à explorer</button><button class="button" id="confirm-order">Confirmer la simulation <span aria-hidden="true">↗</span></button></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <audio id="ambience" src="assets/overtaken.mp3" loop preload="none"></audio>
+  <noscript><div class="no-script">Activez JavaScript pour parcourir cette archive interactive. Aucun service distant n’est nécessaire.</div></noscript>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
