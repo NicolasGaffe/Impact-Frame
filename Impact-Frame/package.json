@@ -1,0 +1,8 @@
+{
+  "name": "impact-frame-archive",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Archive autonome du projet Impact Frame — boutique manga de démonstration",
+  "scripts": { "start": "node server.mjs", "test": "node tests/store.test.cjs" },
+  "engines": { "node": ">=18" }
+}
